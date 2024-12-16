@@ -51,19 +51,18 @@ export default function RichTextEditor({ formatting, setFormatting }) {
   }
 
   function alignText(action) {
-    const alignmentActions = ["left", "right", "center"];
-    const remainingActions = [alignmentActions.filter(item => item !== action)];
     if (Object.hasOwn(formatting, "textAlign")) {
       const prevData = { ...formatting };
       delete prevData["textAlign"];
       setFormatting(prevData);
     }
     setFormatting((prev) => ({ ...prev, textAlign: action }));
-    const prevData = [...active];
-    const filteredArray = prevData.filter(item => remainingActions.includes(item));
-    setActive([...active, ...filteredArray]);
+    const updatedStyles = active.filter(
+      (style) => style !== "left" && style !== "right" && style !== "center"
+    );
+    setActive([...updatedStyles, action]);
   }
-console.log(active);
+
   return (
     <div className="flex items-center text-gray-500">
       <div className="flex items-center gap-2 border-r pr-3">
@@ -102,7 +101,7 @@ console.log(active);
       <div className="flex items-center gap-2 pl-1">
         <button
           className={
-            active === "left"
+            active.includes("left")
               ? "py-1 px-2.5 rounded-md bg-fuchsia-500 text-white"
               : "py-1 px-2.5 rounded-md bg-transparent hover:border-transparent hover:bg-zinc-200"
           }
@@ -112,7 +111,7 @@ console.log(active);
         </button>
         <button
           className={
-            active === "center"
+            active.includes("center")
               ? "py-1 px-2.5 rounded-md bg-fuchsia-500 text-white"
               : "py-1 px-2.5 rounded-md bg-transparent hover:border-transparent hover:bg-zinc-200"
           }
@@ -122,7 +121,7 @@ console.log(active);
         </button>
         <button
           className={
-            active === "right"
+            active.includes("right")
               ? "py-1 px-2.5 rounded-md bg-fuchsia-500 text-white"
               : "py-1 px-2.5 rounded-md bg-transparent hover:border-transparent hover:bg-zinc-200"
           }
