@@ -1,4 +1,3 @@
-import "./App.css";
 import Dashboard from "./features/Dashboard";
 
 function App() {

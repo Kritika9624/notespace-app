@@ -8,7 +8,7 @@ export default function NoNoteSelectedView({ handleCreateNote }) {
             <p>Create a note</p>
         </div>
         <span className="flex justify-center my-4">
-            <CreateNoteButton onClick={handleCreateNote}/>
+            <CreateNoteButton onClick={() => handleCreateNote(true)}/>
         </span>
     </div>
 }

@@ -67,6 +67,7 @@ export default function RichTextEditor({ formatting, setFormatting }) {
     <div className="flex items-center text-gray-500">
       <div className="flex items-center gap-2 border-r pr-3">
         <button
+          type="button"
           className={
             active.includes("bold")
               ? "py-1 px-2.5 rounded-md bg-fuchsia-500 text-white"
@@ -77,6 +78,7 @@ export default function RichTextEditor({ formatting, setFormatting }) {
           <FontAwesomeIcon icon={faBold} />
         </button>
         <button
+          type="button"
           className={
             active.includes("italic")
               ? "py-1 px-2.5 rounded-md bg-fuchsia-500 text-white"
@@ -87,6 +89,7 @@ export default function RichTextEditor({ formatting, setFormatting }) {
           <FontAwesomeIcon icon={faItalic} />
         </button>
         <button
+          type="button"
           className={
             active.includes("underline")
               ? "py-1 px-2.5 rounded-md bg-fuchsia-500 text-white"
@@ -100,6 +103,7 @@ export default function RichTextEditor({ formatting, setFormatting }) {
       </div>
       <div className="flex items-center gap-2 pl-1">
         <button
+          type="button"
           className={
             active.includes("left")
               ? "py-1 px-2.5 rounded-md bg-fuchsia-500 text-white"
@@ -110,6 +114,7 @@ export default function RichTextEditor({ formatting, setFormatting }) {
           <FontAwesomeIcon icon={faAlignLeft} />
         </button>
         <button
+          type="button"
           className={
             active.includes("center")
               ? "py-1 px-2.5 rounded-md bg-fuchsia-500 text-white"
@@ -120,6 +125,7 @@ export default function RichTextEditor({ formatting, setFormatting }) {
           <FontAwesomeIcon icon={faAlignCenter} />
         </button>
         <button
+          type="button"
           className={
             active.includes("right")
               ? "py-1 px-2.5 rounded-md bg-fuchsia-500 text-white"
